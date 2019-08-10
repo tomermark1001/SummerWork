@@ -8,9 +8,23 @@ namespace ConsoleApplication1
 {
     class Program
     {
-        static void Main(string[] args)
+        public static double SumExpressions(List<Expr> lst)// list
         {
-
+            return SumExpressions(lst.GetFirst());
         }
+        public static double SumExpressions(Node<Expr> first)
+        {
+            double sum = 0;
+            while(first!=null)
+            {
+                sum += first.GetValue().Calculate();
+                first = first.GetNext();
+            }
+            return sum;
+        }
+        //static void Main(string[] args)
+        //{
+
+        //}
     }
 }
